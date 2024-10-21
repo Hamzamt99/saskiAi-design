@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="../css/auth/login.css"> 
+    <link rel="stylesheet" href="../css/partials/navbar.css"> 
+    <title>Login</title>
+</head>
+<body>
+    <header id="navbar-container">
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Login</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="auth/register.html">Register here</a></p>
+            <p><a href="auth/forgot-password.html">Forgot Password?</a></p>
+        </div>
+    </main>
+
+    <footer>
+        Footer
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>

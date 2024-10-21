@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/partials/navbar.css">
+    <title>Your Website Title</title>
+</head>
+<body>
+    <header id="navbar-container">
+    </header>
+
+    <main>
+        <h1>Welcome to Home Page</h1>
+        <p>This is the main content of the home page.</p>
+    </main>
+
+    <footer>
+        Footer
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        fetch('./partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>
