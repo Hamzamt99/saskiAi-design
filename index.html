@@ -9,16 +9,16 @@
     <title>Your Website Title</title>
 </head>
 <body>
-    <header id="navbar-container">
+    <header id="nav-bar">
     </header>
 
     <main>
-        <h1>Welcome to Home Page</h1>
-        <p>This is the main content of the home page.</p>
+        <!-- <h1>Welcome to Home Page</h1>
+        <p>This is the main content of the home page.</p> -->
     </main>
 
     <footer>
-        Footer
+        <!-- Footer -->
     </footer>
 
     <script src="js/main.js"></script>
@@ -26,7 +26,7 @@
         fetch('./partials/navbar.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('navbar-container').insertAdjacentHTML('afterbegin', data);
+                document.getElementById('nav-bar').insertAdjacentHTML('afterbegin', data);
             })
             .catch(error => console.error('Error loading navbar:', error));
     </script>
