@@ -1,48 +1,77 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="../css/auth/login.css"> 
-    <link rel="stylesheet" href="../css/partials/navbar.css"> 
     <title>Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'custom-color': '#ff4500',
+              }
+            }
+          }
+        }
+    </script>
 </head>
 <body>
-    <header id="navbar-container">
-    </header>
-
-    <main>
-        <div class="container">
-            <h1>Login</h1>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <main class="min-h-screen flex items-center justify-center bg-gray-100">
+    <section class="flex flex-wrap gap-10 items-start bg-white rounded-2xl shadow-lg">
+        <article class="flex flex-col grow shrink items-start px-8 pt-5 pb-28 min-h-[554px] min-w-[240px] w-[346px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9bed8be5be90b8a2c17ef59a41a172ae0f838ee44de6f9c59b6c0f2414e887af?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="Company Logo" class="object-contain max-w-full aspect-[4.9] w-[245px]" />
+            <form class="flex flex-col py-px mt-16 max-w-full h-[303px] w-[340px] max-md:mt-10">
+                <h1 class="text-2xl font-bold text-slate-900">Sign In</h1>
+                <div class="flex flex-col mt-7 w-full">
+                    <label for="username" class="sr-only">Username</label>
+                    <div class="flex gap-2.5 items-center px-3 py-3.5 w-full text-base leading-none whitespace-nowrap rounded-xl shadow bg-slate-50 min-h-[48px] text-neutral-600">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c8a86614de5e1c4ea6061f91be673016112defd86bcc30a1069016aeb9d86eb?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="object-contain shrink-0 self-stretch my-auto w-4 rounded-none aspect-[0.89]" />
+                        <input type="text" id="username" placeholder="Username" class="flex-1 shrink self-stretch my-auto basis-0 bg-transparent border-none focus:outline-none" />
+                    </div>
+                    <label for="password" class="sr-only">Password</label>
+                    <div class="flex gap-2.5 items-center px-3 py-3.5 mt-4 w-full text-base leading-none whitespace-nowrap rounded-xl shadow bg-slate-50 min-h-[48px] text-neutral-600">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/66362219cd66a9a0731209032cfe78ccd4a4e978561eda777a4ad47310798a91?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="object-contain shrink-0 self-stretch my-auto rounded-none aspect-[0.61] w-[11px]" />
+                        <input type="password" id="password" placeholder="Password" class="flex-1 shrink self-stretch my-auto basis-0 bg-transparent border-none focus:outline-none" />
+                    </div>
+                    <button type="submit" class="flex flex-col justify-center items-center py-2.5 pr-8 pl-5 mt-4 max-w-full bg-pink-500 rounded-xl w-[131px] max-md:pr-5 text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+                        <span class="flex gap-2.5 rounded-md">
+                            <span class="flex justify-center items-center px-0.5 py-px h-full w-[9px]">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9545c44bb39eb1104e96390e164487d4d6f51323e8dedfa2280288b7ae732e46?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="object-contain self-stretch my-auto w-1.5 aspect-[0.6]" />
+                            </span>
+                            <span class="my-auto text-sm leading-none text-center">Sign In</span>
+                        </span>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <a href="auth/register.html">Register here</a></p>
-            <p><a href="auth/forgot-password.html">Forgot Password?</a></p>
-        </div>
-    </main>
-
-    <footer>
-        Footer
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script>
-        fetch('../partials/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').insertAdjacentHTML('afterbegin', data);
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
+            <footer class="flex flex-col items-start mt-7 max-w-full w-[294px]">
+                <p class="flex gap-2 self-stretch">
+                    <span class="grow my-auto text-sm leading-none text-gray-500">By clicking Sign In, you agree to our</span>
+                    <a href="#" class="text-base leading-tight text-sky-400 whitespace-nowrap hover:underline focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">Terms</a>
+                </p>
+                <p class="mt-1.5 text-sm leading-none text-gray-500">and have read and acknowledge our</p>
+                <a href="#" class="text-base leading-tight text-sky-400 hover:underline focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">Privacy Policy</a>
+            </footer>
+        </article>
+        <aside class="flex overflow-hidden flex-col grow shrink rounded-none bg-slate-900 min-w-[240px] w-[334px]">
+            <div class="flex relative flex-col items-center px-8 py-48 w-full aspect-[0.755] max-md:px-5 max-md:py-24">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/736ee0ca238cd0c0ee1bd1173a83788ee8ef7a8489da157528ead86e4e699fce?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="Decorative background" class="object-cover absolute inset-0 size-full" />
+                <h2 class="relative self-stretch text-4xl leading-none text-center text-white">Welcome Back!</h2>
+                <p class="relative mt-9 text-base leading-5 text-center text-white">To keep connected with us please<br />login with your personal info</p>
+                <p class="relative mt-6 text-base leading-none text-center text-white">OR</p>
+                <a href="/auth/register.html" class="flex relative flex-col justify-center items-center py-3 pr-6 pl-3.5 mt-4 mb-0 max-w-full rounded-xl border border-white border-solid bg-sky-400 bg-opacity-0 min-h-[34px] w-[178px] max-md:pr-5 max-md:mb-2.5 hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
+                    <span class="flex gap-2.5 rounded-md">
+                        <span class="flex justify-center items-center px-0.5 py-px h-full w-[9px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b265ebcc72a8147b155063138418cad6b86fa22300554834a414269ff60f1131?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="object-contain self-stretch my-auto w-1.5 aspect-[0.6]" />
+                        </span>
+                        <span class="my-auto text-xs leading-none text-center text-white">Create a free account</span>
+                    </span>
+                </a>
+            </div>
+        </aside>
+    </section>
+</main>
 </body>
 </html>
