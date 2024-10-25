@@ -11,15 +11,24 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
+            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
             <form action="#">
                 <h1>Create Account</h1>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Confirm Password" />
                 <button>Sign Up</button>
+                <p class="text-sm mt-4">
+                    By clicking Sign up, you agree to our 
+                    <a href="#" class="text-blue-500 underline">terms</a> and have read and acknowledge our 
+                    <a href="#" class="text-blue-500 underline">privacy and policy</a>.
+                </p>
             </form>
         </div>
         <div class="form-container sign-in-container">
+            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+
             <form action="#">
                 <h1>Sign in</h1>
                 <input type="email" placeholder="Email" />
@@ -32,8 +41,10 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <p>To keep connected with us please login with your personal info <br/><br/>
+                         <span>OR</span>
+                    </p>
+                    <button class="ghost" id="signIn">Create a free account</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
