@@ -73,12 +73,11 @@ form {
     background-color: #FFFFFF;
     display: flex;
     align-items: start;
-    justify-content: center;
     flex-direction: column;
     padding: 0 30px;
     height: 100%;
-    text-align: center;
-	gap: 5px;
+    margin-top:90px;
+	gap: 20px;
 }
 
 .form-small { 

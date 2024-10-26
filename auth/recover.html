@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="../css/recover.css">
+
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+            <form action="#">
+                <div class="flex-col-gap">
+                    <h1>Recover account</h1>
+                    <h7>Enter your email to recover the password.
+                    </h7>
+                </div>
+                <input type="email" placeholder="Email" />
+                <button>submit</button>
+            </form>
+        </div>
+        <div class="form-container sign-up-container">
+            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>
+                        Lost your account? 
+                    </p>
+                    <button class="ghost" id="signIn">Recover account</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Opse!</h1>
+                    <p>No worries we can help you recover your account<br/><br/>
+                        <span>OR</span>
+                   </p>
+                    <button class="ghost" id="signUp">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+    </footer>
+</main>
+<script src="../js/swap.js" ></script>
+</body>
+</html>
