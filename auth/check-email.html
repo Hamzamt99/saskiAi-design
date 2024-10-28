@@ -3,10 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="../css/recover.css">
-
 </head>
 <body>
     <div class="container" id="container">
@@ -14,47 +11,27 @@
             <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
             <form action="#">
                 <div class="flex-col-gap">
-                    <h1>check your email</h1>
-                    <h7>Password recovery form has been sent to your email.
-                    </h7>
+                    <h1>Check your email</h1>
+                    <p>Password recovery form has been sent to your email.</p>
                 </div>
-                <button>Back to login </button>
-            </form>
-        </div>
-        <div class="form-container sign-up-container">
-            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
-
-            <form action="#">
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 10 19" fill="none">
+                        <path d="M7.69971 4.51274L2.29971 9.91274L7.69971 15.3127" stroke="white" stroke-width="1.5" stroke-miterlimit="3.3333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to login
+                </button>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>
-                        Lost your account? 
-                    </p>
-                    <button class="ghost" id="signIn">Recover account</button>
-                </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Opse!</h1>
-                    <p>No worries we can help you recover your account<br/><br/>
-                        <span>OR</span>
-                   </p>
-                    <button class="ghost" id="signUp">Sign in</button>
+                    <h1>Alright!</h1>
+                    <p>Your privacy is our priority!<br/><br/></p>
                 </div>
             </div>
         </div>
     </div>
-    
-    <footer>
-    </footer>
-</main>
-<script src="../js/swap.js" ></script>
+    <footer></footer>
+    <script src="../js/swap.js"></script>
 </body>
 </html>
