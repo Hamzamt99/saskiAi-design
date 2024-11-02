@@ -9,8 +9,11 @@
 
 </head>
 <body>
+    <div class="wrapper">
+
+        <button class="back"> <img src="../assets/Vector.png" /> BACK</button>
     <div class="container" id="container">
-        <div class="form-container sign-in-container">
+        <div class="form-container">
             <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
             <form action="#">
                 <div class="flex-col-gap">
@@ -18,11 +21,25 @@
                     <h7>Enter your email to recover the password.
                     </h7>
                 </div>
-                <input type="email" placeholder="Email" />
-                <button>submit</button>
+                <div class="inputGroup">
+                    <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                     <input type="email" placeholder="Email" />
+                  </div>
+                
+                <button class="signBtn">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946757c865c989f449270d69e1a70586a45b059f1e3617b38a6b98adb06174f1?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="w-1 object-contain halfArrow" />
+                    <path
+                    d="M1 5H9M9 5L5 1M9 5L5 9"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  Submit
+                  </button>
             </form>
         </div>
-        <div class="form-container sign-up-container">
+        <!-- <div class="form-container sign-up-container">
             <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
 
             <form action="#">
@@ -37,40 +54,35 @@
                     </svg>
                 </button>
             </form>
-        </div>
+        </div> -->
         <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
+        <div class="overlay"> 
+                    <!-- <h1>Welcome Back!</h1>
                     <p>
                         Lost your account? 
                     </p>
                     <button class="ghost" id="signIn">
-                        Recover account
+                        Recover account  -->
                         <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
                             <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Opse!</h1>
-                    <p>No worries we can help you recover your account<br/><br/>
-                        <span>OR</span>
-                   </p>
-                    <button class="ghost" id="signUp">
-                        Sign in
-                        <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
-                            <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
+                    <!-- </button> -->
+                    <div class="overlay-panel overlay-right">
+
+                    </div> 
+                    <div class="imgLogo">
+                        <img src="../assets/Logo-saski-White.png" alt="Logo"/>
+
+                    </div>
             </div>
         </div>
     </div>
+</div>
     
     <footer>
     </footer>
 </main>
 <script src="../js/swap.js" ></script>
+<script src="https://kit.fontawesome.com/770f47bb15.js" ></script>
 </body>
 </html>

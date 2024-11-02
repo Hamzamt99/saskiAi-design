@@ -10,9 +10,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
+    font-family:'Segoe UI';
+font-weight: 400px;
     height: 100vh;
     margin: -20px 0 50px;
+    
 }
 
 h1 {
@@ -42,8 +44,30 @@ a {
     text-decoration: none;
     margin: 15px 0;
 }
+.back {
+    background-color: rgb(255, 255, 255); /* Example color */
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space between .back button and .container */
+    width: 10%;
+    display: flex; 
+    justify-content: center;
+     gap: 6px;
+     transition: ease-out 0.5s;
+    border-color: white;
+}
+.back:hover{
+    box-shadow: 0px 5px 7px 2px #888888;
 
-button {
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signBtn {
     border-radius: 1rem; 
     border: 1px solid #C451AF;
     background-color: #C451AF;
@@ -52,7 +76,6 @@ button {
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
-    text-transform: uppercase;
     transition: transform 80ms ease-in;
 }
 
@@ -91,7 +114,7 @@ form {
 	gap: 5px;
 }
 
-input {
+/* input {
     background-color: #eee;
     border: none;
     padding: 12px 15px;
@@ -99,7 +122,7 @@ input {
     width: 100%;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .container {
     background-color: #fff;
@@ -121,42 +144,6 @@ input {
     padding: 20px 0;
 }
 
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-}
-
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-    
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
 .overlay-container {
     position: absolute;
     top: 0;
@@ -173,7 +160,6 @@ input {
 }
 
 .overlay {
-    background: #FF416C;
     background-color: #040035;
     background-repeat: no-repeat;
     background-size: cover;
@@ -183,28 +169,67 @@ input {
     left: -100%;
     height: 100%;
     width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
     transform: translateX(50%);
 }
-
+.imgLogo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+position: absolute;
+top: -100px;
+right: -550px;
+}
 .overlay-panel {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
     text-align: center;
-    top: 0;
-    height: 100%;
+    top: -30;
+        height: 100%;
     width: 50%;
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+/* @keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+} */
 
 .overlay-left {
     background-image: url('../assets/background.png');
@@ -328,4 +353,44 @@ button{
 
 .back-button:hover svg {
     transform: translateX(-3px); 
+}
+
+.signBtn{
+    width:40%;
+     display: flex; 
+     justify-content: center;
+      gap: 6px;
+}
+.halfArrow{
+    height: 100%;
+}
+.inputGroup {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background-color: #fafbff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 8px 0;
+    padding: 0 10px;
+    transition:  ease-out 0.5s;
+}
+
+.inputGroup label {
+    padding-right: 8px;
+    color: #666;
+}
+
+.inputGroup input {
+    background-color: transparent;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    outline: none;
+}
+
+.inputGroup:focus-within {
+    box-shadow: -1px 7px #888888;
+-moz-box-shadow: 0 0 8px #888888;
+-webkit-box-shadow: 0 0 8px #888888;
 }

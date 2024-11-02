@@ -1,83 +1,161 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="../css/signup.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
     <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
-            <form action="#">
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Confirm Password" />
-                <button>
-                    Sign Up
-                    <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
-                        <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <p class="text-sm mt-4">
-                    By clicking Sign up, you agree to our 
-                    <a href="#" class="text-blue-500 underline">terms</a> and have read and acknowledge our 
-                    <a href="#" class="text-blue-500 underline">privacy and policy</a>.
-                </p>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+      <div class="form-container sign-up-container">
+        <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+        <form action="#" class="formSignup">
+          <h1>Sign Up</h1>
 
-            <form action="#">
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>
-                    Sign In
-                    <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
-                        <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info <br/><br/>
-                         <span>OR</span>
-                    </p>
-                    <button class="ghost" id="signIn">
-                        Create a free account
-                        <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
-                            <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">
-                        Sign Up
-                        <svg width="12" height="12" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 5px;">
-                            <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
+          <div class="userSigning">
+            <div class="inputGroup">
+              <label for="text"><i class="fa-solid fa-user"></i></label>
+              <input type="text" placeholder="Name" />
             </div>
+            <div class="inputGroup">
+              <label for="email"><i class="fa-solid fa-envelope"></i></label
+              ><input type="email" placeholder="Email" />
+            </div>
+            <div class="inputGroup">
+              <label for="password"><i class="fa-solid fa-lock"></i></label>
+              <input type="password" placeholder="Password" />
+            </div>
+            <div class="inputGroup">
+              <label for="password"><i class="fa-solid fa-lock"></i></label>
+              <input type="password" placeholder="Confirm Password" />
+            </div>
+          </div>
+
+          <button class="signBtn">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946757c865c989f449270d69e1a70586a45b059f1e3617b38a6b98adb06174f1?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="w-1 object-contain halfArrow" />
+            <path
+            d="M1 5H9M9 5L5 1M9 5L5 9"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+            Sign Up
+            
+              
+          </button>
+          <p class="text-sm mt-4">
+            By clicking Sign up, you agree to our
+            <a href="#" class="text-blue-500 underline">terms</a> and have read
+            and acknowledge our
+            <a href="#" class="text-blue-500 underline">privacy and policy</a>.
+          </p>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <img src="../assets/logo-saski.png" alt="Logo" class="logo" />
+
+        <form action="#" class="formLogin">
+          <h1>Sign In</h1>
+
+          <div class="userSigning">
+            <div class="inputGroup">
+              <label for="email"><i class="fa-solid fa-user"></i></label>
+              <input type="email" id="email" placeholder="Username" />
+            </div>
+            <div class="inputGroup">
+              <label for="password"><i class="fa-solid fa-lock"></i></label>
+              <input type="password" id="password" placeholder="Password" />
+            </div>
+          </div>
+
+          <button class="signBtn">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/946757c865c989f449270d69e1a70586a45b059f1e3617b38a6b98adb06174f1?placeholderIfAbsent=true&apiKey=7777c6fc6e114b4da0484cfd7c1eabf6" alt="" class="w-1 object-contain halfArrow" />
+              <path
+                d="M2 6H10M10 6L6 2M10 6L6 10"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Sign In
+          </button>
+          <p class="text-sm mt-4">
+            By clicking Sign up, you agree to our
+            <a href="#" class="text-blue-500 underline">terms</a> and have read
+            and acknowledge our
+            <a href="#" class="text-blue-500 underline">privacy and policy</a>.
+          </p>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="Greet">Hello, Friend!</h1>
+            <p class="greetInfo">
+              Enter your personal details and start journey with us
+              <br /><br /><span>OR</span>
+            </p>
+            <button class="ghost" id="signIn">
+              Sign In
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 10 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="margin-left: 5px"
+              >
+                <path
+                  d="M1 5H9M9 5L5 1M9 5L5 9"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="Greet">Welcome Back!</h1>
+            <p class="greetInfo">
+              To keep connected with us please login with your personal info
+              <br /><br />
+              <span>OR</span>
+            </p>
+
+            <button class="ghost" id="signUp">
+              Create a Free account
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 10 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="margin-left: 5px"
+              >
+                <path
+                  d="M1 5H9M9 5L5 1M9 5L5 9"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-    
-    <footer>
-    </footer>
-</main>
-<script src="../js/swap.js" ></script>
-</body>
+
+    <footer></footer>
+    <script src="../js/swap.js"></script>
+    <script
+      src="https://kit.fontawesome.com/770f47bb15.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
