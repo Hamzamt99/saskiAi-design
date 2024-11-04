@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Website Title</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,40 +11,225 @@ https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js
 "></script>
 
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                'custom-color': '#ff4500',
-              }
-            }
-          }
-        }
-      </script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-color": "#ff4500",
+            },
+          },
+        },
+      };
+    </script>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    <header id="nav-bar">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header id="nav-bar"></header>
 
-      
-    </header>
+    <main class="bg-gray-100 min-h-screen p-8 space-y-8">
+      <div>
+        <div>
+          <h1 class="text-3xl text-gray-800">Default Dashboard</h1>
+          <p class="text-gray-500">Home | Dashboards</p>
+        </div>
+        <br />
+        <div class="flex flex-col gap-20">
+          <section>
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Stats</h2>
+            <div
+              class="bg-white rounded-lg p-6 flex items-center space-x-8 w-7/12 gap-4 w-[880px]"
+            >
+              <div class="flex-shrink-0">
+                <h3 class="text-gray-600 font-medium mb-2">Monthly Messages</h3>
+                <div class="flex items-center space-x-2 mb-0">
+                  <span
+                    class="text-3xl text-gray-900 flex flex-row gap-5 items-center"
+                    >52
+                    <img
+                      src="./assets/Group.png"
+                      alt=""
+                      class="w-[20px] h-[20px]"
+                  /></span>
+                </div>
+                <p class="text-gray-500 text-sm uppercase tracking-wide">
+                  Monday
+                </p>
 
-    <main>
-        <h1 class="text-4xl font-bold text-center">Welcome to Tailwind CSS</h1>
+                <div class="mt-4">
+                  <div class="flex items-center space-x-6">
+                    <div>
+                      <span class="text-xl font-semibold text-gray-900"
+                        >142</span
+                      >
+                      <p class="text-gray-500 text-xs uppercase">This Week</p>
+                    </div>
+                    <div>
+                      <span class="text-xl font-semibold text-gray-900"
+                        >942</span
+                      >
+                      <p class="text-gray-500 text-xs uppercase">This Month</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-grow">
+                <img
+                  src="./assets/chart.png"
+                  alt="Monthly Messages Chart"
+                  class="w-full h-32 object-contain"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- Stats Cards -->
+          <section>
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Stats</h2>
+            <div
+              class="flex grid-cols-1 md:grid-cols-5 gap-4 bg-gray-100 h-[200px] w-full flex-row"
+            >
+              <!-- Card 1 -->
+              <div
+                class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 justify-center w-[163px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      #7e00f7 0%,
+                      #c451af 100%
+                    );
+                  "
+                >
+                  <i
+                    class="fa-solid fa-rotate-right"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <p class="text-gray-600 font-medium text-sm">Pending Orders</p>
+                <span class="text-2xl font-semibold text-gray-900">52</span>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 justify-center w-[163px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      #7e00f7 0%,
+                      #c451af 100%
+                    );
+                  "
+                >
+                  <i class="fa-solid fa-wave-square" style="color: #ffffff"></i>
+                </div>
+                <p class="text-gray-600 font-medium text-sm">Active Orders</p>
+                <span class="text-2xl font-semibold text-gray-900">34</span>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 justify-center w-[163px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      #7e00f7 0%,
+                      #c451af 100%
+                    );
+                  "
+                >
+                  <i class="fa-solid fa-check" style="color: #ffffff"></i>
+                </div>
+                <p class="text-gray-600 font-medium text-sm">
+                  Delivered Orders
+                </p>
+                <span class="text-2xl font-semibold text-gray-900">28</span>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 justify-center w-[163px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      #7e00f7 0%,
+                      #c451af 100%
+                    );
+                  "
+                >
+                  <i
+                    class="fa-solid fa-arrow-turn-up fa-rotate-270"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <p class="text-gray-600 font-medium text-sm">Returned Orders</p>
+                <span class="text-2xl font-semibold text-gray-900">19</span>
+              </div>
+
+              <!-- Card 5 -->
+              <div
+                class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 justify-center w-[163px]"
+              >
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      #7e00f7 0%,
+                      #c451af 100%
+                    );
+                  "
+                >
+                  <i class="fa-solid fa-x" style="color: #ffffff"></i>
+                </div>
+                <p class="text-gray-600 font-medium text-sm">Canceled Orders</p>
+                <span class="text-2xl font-semibold text-gray-900">72</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 
-    <footer></footer>
+    <footer class="bg-gray-100 p-8 space-y-8 w-full">
+      <hr class="h-[2px] w-full bg-gray-200 border-0 dark:bg-gray-700 -mx-0" />
+      <br />
+      <div class="flex justify-between">
+        <span class="text-gray-500">Colored Strategies 2020</span>
+        <div class="flex flex-row gap-5 text-[#040035]">
+          <a href="">Purchase</a>
+          <a href="">Docs</a>
+          <a href="">Review</a>
+        </div>
+      </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <script>
-        fetch('./partials/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-bar').insertAdjacentHTML('afterbegin', data);
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+      fetch("./partials/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document
+            .getElementById("nav-bar")
+            .insertAdjacentHTML("afterbegin", data);
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
     </script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/770f47bb15.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
