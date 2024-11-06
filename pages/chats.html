@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website Title</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js
+    "></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "custom-color": "#ff4500",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/css/reset.css" />
+  </head>
+  <body class="bg-gray-100">
+    <header id="nav-bar"></header>
+
+    <!-- Main Section -->
+    <section class="container mx-auto px-4 py-6 flex flex-row justify-between">
+      <!-- Title Section -->
+      <div class="mb-4">
+        <h1 class="text-2xl font-bold">Chat bots</h1>
+        <p class="text-gray-500">Chat bots | Apps</p>
+      </div>
+
+      <!-- Action Bar -->
+      <div class="flex justify-between p-4  rounded mb-4  " >
+        <div class="flex space-x-4 items-center">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search"
+              class="border rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-gray-400"></i>
+          </div>
+
+          <!-- Add Contact -->
+          <button class="flex items-center bg-purple-600 text-white px-4 py-2 rounded-lg shadow">
+            <i class="fa-solid fa-user mr-2"></i> Add Contact
+          </button>
+
+          <!-- Filter Options -->
+          <div class="flex items-center  rounded-full overflow-hidden divide-x divide-[#040035]">
+            <!-- Checkbox -->
+            <div class="px-3 py-2 ">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 focus:ring-0 focus:outline-none" />
+            </div>
+            <!-- Select Dropdown -->
+            <select class="border rounded-lg px-2 py-1 text-gray-700 focus:outline-none flex ">
+              
+            </select>
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- Table Section -->
+  <div class="container mx-auto px-4">
+    <div class="overflow-hidden border  rounded-lg bg-white">
+      <table class="w-full text-left text-gray-800">
+        <thead>
+          <tr class="bg-gray-100  uppercase text-sm">
+            <th class="p-4 font-normal">Name <span class="text-xs">⬍</span></th>
+            <th class="p-4 font-normal">Email <span class="text-xs">⬍</span></th>
+            <th class="p-4 font-normal">Phone <span class="text-xs">⬍</span></th>
+            <th class="p-4 font-normal">Category <span class="text-xs">⬍</span></th>
+            <th class="p-4"></th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr class="border-t border-gray-200 hover:bg-gray-50 " >
+            <td class="p-4">
+              <div class="text-gray-800 font-semibold">Gresham Jeanette</div>
+              <div class="text-sm text-gray-500">Project Manager</div>
+            </td>
+            <td class="p-4 text-gray-600">gresham@jeanette.com</td>
+            <td class="p-4 text-gray-600">+649073732</td>
+            <td class="p-4">
+                <span class="px-3 py-1 text-xs font-semibold text-[#C451AF] border border-[#C451AF] rounded-full">Personal</span>
+            </td>
+            <td class=" mt-6 p-4 text-center flex justify-center items-center ">
+              <input type="checkbox" class="rounded text-purple-600 focus:ring-0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm py-4">
+      Colored Strategies 2020
+    </footer>
+
+    <!-- Load Navbar -->
+    <script>
+      fetch("/partials/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav-bar").insertAdjacentHTML("afterbegin", data);
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <script src="https://kit.fontawesome.com/770f47bb15.js" crossorigin="anonymous"></script>
+</html>
