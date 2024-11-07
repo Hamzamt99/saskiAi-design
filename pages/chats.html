@@ -9,7 +9,6 @@
     <script src="
     https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js
     "></script>
-
     <script>
       tailwind.config = {
         theme: {
@@ -24,99 +23,285 @@
 
     <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 h-screen" onload = "getContactOnRefresh()">
     <header id="nav-bar"></header>
 
     <!-- Main Section -->
-    <section class="container mx-auto px-4 py-6 flex flex-row justify-between">
-      <!-- Title Section -->
-      <div class="mb-4">
-        <h1 class="text-2xl font-bold">Chat bots</h1>
-        <p class="text-gray-500">Chat bots | Apps</p>
+    <section class="container ml-10  py-6 flex flex-row justify-between w-full">      <!-- Title Section -->
+      <div class="w-full">
+        <h1 class="text-3xl text-gray-800">Default Dashboard</h1>
+        <p class="text-gray-500">Home | Dashboards</p>
       </div>
 
       <!-- Action Bar -->
-      <div class="flex justify-between p-4  rounded mb-4  " >
-        <div class="flex space-x-4 items-center">
+<div class="flex justify-end p-4 rounded mb-4 w-full ">
+        <div class="flex  space-x-2 items-center">
           <!-- Search -->
           <div class="relative">
             <input
               type="text"
               placeholder="Search"
-              class="border rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-gray-400"></i>
+              class="rounded-[16px] px-4 py-2 text-gray-700 focus:outline-none border-purple-950 focus:ring-2 focus:ring-purple-500 bg-gray-100 border-2"
+            /><i
+              class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-gray-400"
+            ></i>
           </div>
 
           <!-- Add Contact -->
-          <button class="flex items-center bg-purple-600 text-white px-4 py-2 rounded-lg shadow">
-            <i class="fa-solid fa-user mr-2"></i> Add Contact
+          <button
+          onclick="createContact()"
+            class="flex items-center justify-center border-2 border-purple-950 text-purple-950 px-4 py-2 rounded-[15px] shadow w-[300px] flex-row"
+          >
+            <i class="fa-regular fa-user mr-2"></i> <span>Add Contact</span>
           </button>
 
           <!-- Filter Options -->
-          <div class="flex items-center  rounded-full overflow-hidden divide-x divide-[#040035]">
+          <div class="flex border-2 border-solid border-purple-950 h-10 rounded-full bg-gray-100">
             <!-- Checkbox -->
-            <div class="px-3 py-2 ">
-                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 focus:ring-0 focus:outline-none" />
+            <div class="flex items-center p-2 justify-center">
+              <input
+                type="checkbox"
+                class="form-checkbox h-4 w-4 mr-2 text-purple-600 focus:ring-0 focus:outline-none border-2 border-purple-950 rounded"
+              />
             </div>
+          
             <!-- Select Dropdown -->
-            <select class="border rounded-lg px-2 py-1 text-gray-700 focus:outline-none flex ">
-              
-            </select>
-        </div>
-        </div>
-
+            <div class="relative flex items-center p-2 border-solid border-l justify-center ">
+              <select class="action bg-transparent text-purple-950 text-center text-sm h-full cursor-pointer" onchange="getContactOnRefresh()">
+             <option value="0" selected>Add</option>
+             <option value="1">Delete</option>
+              </select>
+            </div>
+          </div>
       </div>
     </section>
 
-  <!-- Table Section -->
-  <div class="container mx-auto px-4">
-    <div class="overflow-hidden border  rounded-lg bg-white">
-      <table class="w-full text-left text-gray-800">
-        <thead>
-          <tr class="bg-gray-100  uppercase text-sm">
-            <th class="p-4 font-normal">Name <span class="text-xs">⬍</span></th>
-            <th class="p-4 font-normal">Email <span class="text-xs">⬍</span></th>
-            <th class="p-4 font-normal">Phone <span class="text-xs">⬍</span></th>
-            <th class="p-4 font-normal">Category <span class="text-xs">⬍</span></th>
-            <th class="p-4"></th>
-          </tr>
-        </thead>
-        <tbody >
-          <tr class="border-t border-gray-200 hover:bg-gray-50 " >
-            <td class="p-4">
-              <div class="text-gray-800 font-semibold">Gresham Jeanette</div>
-              <div class="text-sm text-gray-500">Project Manager</div>
-            </td>
-            <td class="p-4 text-gray-600">gresham@jeanette.com</td>
-            <td class="p-4 text-gray-600">+649073732</td>
-            <td class="p-4">
-                <span class="px-3 py-1 text-xs font-semibold text-[#C451AF] border border-[#C451AF] rounded-full">Personal</span>
-            </td>
-            <td class=" mt-6 p-4 text-center flex justify-center items-center ">
-              <input type="checkbox" class="rounded text-purple-600 focus:ring-0">
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Table Section -->
+    <div class="container ml-10 px-4 ">
+      <div class=" border bg-white overflow-auto h-full">
+        <table class="w-full text-left text-gray-800 ">
+          <thead>
+            <tr
+              class="bg-gray-100 uppercase text-sm flex flex-row w-full justify-between"
+            >
+              <th class="p-4 font-normal flex flex-row gap-2">
+                Name
+                <img
+                  src="/assets/Group 111.png"
+                  class="filter brightness-50"
+                  alt=""
+                />
+              </th>
+              <th class="p-4 font-normal flex flex-row gap-2">
+                Email
+                <img
+                  src="/assets/Group 111.png"
+                  alt=""
+                  class="filter brightness-50"
+                />
+              </th>
+              <th class="p-4 font-normal flex flex-row gap-2">
+                Phone
+                <img
+                  src="/assets/Group 111.png"
+                  class="filter brightness-50"
+                  alt=""
+                />
+              </th>
+              <th class="p-4 font-normal flex flex-row gap-2">
+                Category
+                <img
+                  src="/assets/Group 111.png"
+                  class="filter brightness-50"
+                  alt=""
+                />
+              </th>
+              <th class="p-4"></th>
+            </tr>
+          </thead>
+          <tbody class="contactContainer truncate">
+            <!-- <tr
+              class=" border-gray-200 hover:bg-gray-50 uppercase text-sm flex flex-row w-full justify-between"
+            >
+              <td class="p-4">
+                <div class="text-gray-800 font-semibold">Gresham Jeanette</div>
+                <div class="text-sm text-gray-500">Project Manager</div>
+              </td>
+              <td class="p-4 text-gray-600">gresham@jeanette.com</td>
+              <td class="p-4 text-gray-600">+649073732</td>
+              <td class="p-4">
+                <span
+                  class="px-3 py-1 text-xs font-semibold text-[#C451AF] border border-[#C451AF] rounded-full"
+                  >Personal</span
+                >
+              </td>
+              <td class=" p-4 text-center flex justify-center items-center">
+                <input
+                  type="checkbox"
+                  class="rounded text-purple-600 focus:ring-0"
+                />
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </body>
+  <footer id="footer">
+  </footer>
 
-</body>
-    <!-- Footer -->
-    <footer class="text-center text-gray-500 text-sm py-4">
-      Colored Strategies 2020
-    </footer>
+  <!-- Load Navbar -->
+  <script>
+    fetch("/partials/navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document
+          .getElementById("nav-bar")
+          .insertAdjacentHTML("afterbegin", data);
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  </script>
+  <!-- load footer -->
+  <!-- <script>
+    fetch("/partials/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document
+          .getElementById("footer")
+          .insertAdjacentHTML("afterbegin", data);
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  </script> -->
+<script>
+    createContact.contacts = [];
 
-    <!-- Load Navbar -->
-    <script>
-      fetch("/partials/navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("nav-bar").insertAdjacentHTML("afterbegin", data);
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script>
+ function createContact(name="test", role="system analysis", email="dummy@email.com", phone="+112233", label="enterpries") {
 
-    <script src="https://kit.fontawesome.com/770f47bb15.js" crossorigin="anonymous"></script>
+
+  // Create the contact object
+  let contact = {
+    name: name,
+    role: role,
+    email: email,
+    phone: phone,
+    label: label
+  };
+
+  // Push the new contact into the contacts array
+  const exists = createContact.contacts.some(existingContact => existingContact.email === contact.email);
+  console.log(createContact.contacts);
+
+if (!exists) {
+
+  createContact.contacts.push(contact);
+   // Save the contacts array to localStorage
+   localStorage.setItem("contactObject", JSON.stringify(createContact.contacts));
+  // Get the parent container
+  let parent = document.getElementsByClassName('contactContainer')[0];
+  let tr = document.createElement('tr');
+
+  tr.classList.add('border-gray-200', 'hover:bg-gray-50', 'uppercase', 'text-sm', 'flex', 'flex-row', 'w-full', 'justify-between');
+
+   // Create the first column (contact name and role)
+   let td1 = document.createElement('td');
+  td1.classList.add('p-4');
+  
+  let div1 = document.createElement('div');
+  div1.classList.add('text-gray-800', 'font-semibold', 'contactName'); // Add class 'contactName' here
+  div1.textContent = name; // Use name
+
+  let div2 = document.createElement('div');
+  div2.classList.add('text-sm', 'text-gray-500');
+  div2.textContent = role; // Use role
+
+  td1.appendChild(div1);
+  td1.appendChild(div2);
+
+  // Create the second column (email)
+  let td2 = document.createElement('td');
+  td2.classList.add('p-4', 'text-gray-600','mt-2');
+  td2.textContent = email; // Use email
+
+  // Create the third column (phone)
+  let td3 = document.createElement('td');
+  td3.classList.add('p-4', 'text-gray-600','mt-2');
+  td3.textContent = phone; // Use phone
+
+  // Create the fourth column (label)
+  let td4 = document.createElement('td');
+  td4.classList.add('p-4','mt-2');
+  
+  let span = document.createElement('span');
+  span.classList.add('px-3','mt-2', 'py-1', 'text-xs', 'border-solid', 'font-semibold', 'text-[#C451AF]', 'border', 'border-[#C451AF]', 'rounded-full');
+  span.textContent = label; // Use label
+
+  td4.appendChild(span);
+
+  // Create the fifth column (checkbox)
+  let td5 = document.createElement('td');
+  td5.classList.add('p-4', 'text-center', 'flex', 'justify-center', 'items-center');
+  
+  let checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.classList.add('rounded', 'text-purple-600', 'focus:ring-0', 'contactCheckbox');
+  td5.appendChild(checkbox);
+
+  // Append all columns to the row
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  tr.appendChild(td4);
+  tr.appendChild(td5);
+
+  // Append the row to the parent container
+  parent.appendChild(tr);
+
+}
+
+ 
+
+}
+
+</script>
+<script>
+function getContactOnRefresh() {
+  let action=document.getElementsByClassName("action")[0];
+  const obj = JSON.parse(localStorage.getItem('contactObject'));
+console.log('called with value : ',action.value);
+
+  if (action.value=='0' && obj.length) {
+    for (let i = 0; i < obj.length; i++) {
+      new createContact(
+        obj[i].name,
+        obj[i].role,
+        obj[i].email,
+        obj[i].phone,
+        obj[i].label
+      );
+    }
+  }
+  // If action is "1" (Delete), remove selected contacts
+  if (action.value === '1') {
+    
+    let selectedCheckboxes = document.querySelectorAll('.contactCheckbox:checked');
+    if (selectedCheckboxes.length) {
+      // Remove selected contacts from the DOM and localStorage
+      selectedCheckboxes.forEach(checkbox => {
+        let contactName = checkbox.closest('tr').querySelector('.contactName').textContent; // Assuming you have a class for name
+
+        // Remove the corresponding row from the table
+        checkbox.closest('tr').remove();
+
+        // Find and remove the contact in localStorage by matching the name
+        let updatedContacts = obj.filter(contact => contact.name !== contactName);
+        localStorage.setItem('contactObject', JSON.stringify(updatedContacts));
+      });
+    }
+  }
+}
+</script>
+  <script
+    src="https://kit.fontawesome.com/770f47bb15.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
