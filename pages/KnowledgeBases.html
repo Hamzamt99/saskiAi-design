@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saski Ai Knowledge Bases</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#040035",
+                "secondary": "#C451AF",
+              },
+            },
+          },
+        };
+      </script>
+</head>
+<body class="flex gap-4 min-h-screen bg-gray-100 p-6">
+
+    <!-- Sidebar -->
+    <aside id="sidebar-container" >
+        <!-- Sidebar content will be loaded here -->
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content" class="bg-white p-6 w-full shadow-xl rounded-xl">
+        <h1 class="text-2xl font-bold">Welcome to Saski Ai Knowledge Bases</h1>
+        <p class="mt-4 text-gray-700">
+            Here is the main content of the page. This section can contain anything you'd like to display next to the sidebar.
+        </p>
+    </main>
+
+    <script>
+        function addSidebarNavigation() {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const mainContent = document.getElementById('main-content');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    sidebarItems.forEach(i => i.classList.remove('text-primary', 'border', 'border-secondary', 'rounded-xl', 'p-3'));
+
+                    item.classList.add('text-primary', 'border', 'border-secondary', 'rounded-xl', 'p-3');
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("../partials/sidebar.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("sidebar-container").innerHTML = html;
+                    addSidebarNavigation(); 
+                })
+                .catch(error => console.error("Error loading sidebar:", error));
+        });
+    </script>
+</body>
+</html>

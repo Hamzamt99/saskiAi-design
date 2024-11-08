@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Navigation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#040035",
+            "secondary": "#C451AF",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="flex min-h-screen bg-gray-100">
+
+  <!-- Sidebar -->
+  <aside class="bg-white p-6 w-60 shadow-xl rounded-xl">
+    <div id="sidebar" class="flex flex-col gap-2 space-y-6">
+      
+      <!-- My Chat bots -->
+      <div class="sidebar-item flex items-center space-x-3 text-gray-500 cursor-pointer" data-page="chat-bots">
+        <img src="../assets/chatBot.png"/>
+        <span class="font-medium text-primary">My Chat bots</span>
+      </div>
+
+      <!-- Knowledge bases -->
+      <div class="sidebar-item flex items-center space-x-3 text-gray-500 cursor-pointer" data-page="knowledge-bases">
+        <img src="../assets/knowledge.png"/>
+        <span class="font-medium text-primary">Knowledge bases</span>
+      </div>
+
+      <!-- Settings -->
+      <div class="sidebar-item flex items-center space-x-3 text-gray-500 cursor-pointer" data-page="settings">
+        <img src="../assets/settings.png"/>
+        <span class="font-medium text-primary">Settings</span>
+      </div>
+      
+    </div>
+  </aside>
+  <!-- <script>
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    const mainContent = document.getElementById('main-content');
+
+    sidebarItems.forEach(item => {
+      item.addEventListener('click', () => {
+        sidebarItems.forEach(i => i.classList.remove('text-primary', 'border', 'border-secondary', 'rounded-full'));
+
+        item.classList.add('text-primary', 'border', 'border-secondary', 'rounded-full');
+
+        // const page = item.getAttribute('data-page');
+        // updateContent(page);
+      });
+    });
+
+    // function updateContent(page) {
+    //   mainContent.innerHTML = `<h1 class="text-2xl font-bold">${page.replace('-', ' ').toUpperCase()}</h1>
+    //                            <p class="mt-4 text-secondary">This is the content for ${page.replace('-', ' ')}.</p>`;
+    // }
+  </script> -->
+
+</body>
+</html>
